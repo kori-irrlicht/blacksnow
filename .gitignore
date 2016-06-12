@@ -103,3 +103,9 @@ local.properties
 .recommenders/
 
 *~
+
+Makefile
+config.log
+config.status
+
+.deps/
