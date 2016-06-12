@@ -10,8 +10,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "gettext.h"
+#define _(String) gettext (String)
 
 int main(void) {
-	puts("Hello World"); /* prints Hello World */
+
+	setlocale (LC_ALL, "");
+	bindtextdomain (PACKAGE, LOCALEDIR);
+	textdomain (PACKAGE);
+
+	puts(_("Hello World")); /* prints Hello World */
 	return EXIT_SUCCESS;
 }
