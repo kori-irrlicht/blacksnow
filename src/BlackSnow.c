@@ -54,7 +54,7 @@ bool bs_init(struct GameEnv *ge) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("SDL initialization failed! SDL_Error: %s\n",
                SDL_GetError());
-        return true;
+        return false;
     }
 
     ge->window = SDL_CreateWindow(PACKAGE_STRING,
