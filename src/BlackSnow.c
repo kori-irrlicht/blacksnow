@@ -35,14 +35,12 @@ int main(void) {
     return EXIT_SUCCESS;
 }
 
-bool bs_init(struct GameEnv *ge) {
-    if (setlocale(LC_ALL,
-                  "") == NULL) {
+bool bs_init(struct GameEnv * ge) {
+    if (setlocale(LC_ALL, "") == NULL) {
         puts("setlocale failed");
         return false;
     }
-    if (bindtextdomain(PACKAGE,
-                       LOCALEDIR) == NULL) {
+    if (bindtextdomain(PACKAGE, LOCALEDIR) == NULL) {
         puts("bindtextdomain failed");
         return false;
     }
@@ -65,14 +63,12 @@ bool bs_init(struct GameEnv *ge) {
                                   SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 
     if (ge->window == NULL) {
-        printf("Couldn't create window! SDL_Error: %s\n",
-               SDL_GetError());
+        printf("Couldn't create window! SDL_Error: %s\n", SDL_GetError());
         return false;
     }
 
     ge->renderer = SDL_CreateRenderer(ge->window,
-                                      -1,
-                                      SDL_RENDERER_ACCELERATED);
+                                      -1, SDL_RENDERER_ACCELERATED);
 
     if (ge->renderer == NULL) {
         printf("Couldn't create renderer! SDL_Error: %s\n",

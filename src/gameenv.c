@@ -14,4 +14,3 @@ void gameenv_Destroy(struct GameEnv *ge) {
     SDL_DestroyWindow(ge->window);
     ge->window = NULL;
 }
-
