@@ -12,6 +12,13 @@
 #include <stdbool.h>
 
 /**
+ * MS_PER_FRAME is the max time, a frame should take for updating.
+ *
+ * TODO: Read from config file
+ */
+extern const int MS_PER_FRAME;
+
+/**
  * GameEnv contains the environement of the game, like the main window.
  */
 struct GameEnv {
@@ -39,5 +46,10 @@ void gameenv_Destroy(struct GameEnv *ge);
  * @return If the initialization was successful or not
  */
 bool gameenv_Init(struct GameEnv *ge);
+
+/**
+ * gameenv_Run contains the gameloop.
+ */
+void gameenv_Run(struct GameEnv *ge);
 
 #endif                          /* SRC_GAMEENV_H_ */

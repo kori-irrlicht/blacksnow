@@ -29,7 +29,7 @@ int main(void) {
         puts("bs_init failed! Closing...");
     }
 
-    SDL_Delay(2000);
+    gameenv_Run(&ge);
 
     bs_close(&ge);
     return EXIT_SUCCESS;
