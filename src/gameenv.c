@@ -40,6 +40,7 @@ bool gameenv_Init(struct GameEnv *ge) {
 
     return true;
 
+    // Cleanup if error in initialization
   err_render:
     SDL_DestroyRenderer(ge->renderer);
     ge->renderer = NULL;
