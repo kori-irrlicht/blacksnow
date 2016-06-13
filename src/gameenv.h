@@ -9,6 +9,7 @@
 #define SRC_GAMEENV_H_
 
 #include <SDL2/SDL.h>
+#include <stdbool.h>
 
 struct GameEnv {
     SDL_Window *window;
@@ -16,5 +17,7 @@ struct GameEnv {
 };
 
 void gameenv_Destroy(struct GameEnv *ge);
+
+bool gameenv_Init(struct GameEnv *ge);
 
 #endif                          /* SRC_GAMEENV_H_ */
