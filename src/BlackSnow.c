@@ -24,6 +24,7 @@ void bs_close();
 int main(void) {
 
     struct GameEnv ge;
+    ge.msPerFrame = 16;
 
     if (!bs_init(&ge)) {
         puts("bs_init failed! Closing...");

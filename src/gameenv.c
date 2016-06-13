@@ -7,8 +7,6 @@
 
 #include "gameenv.h"
 
-const int MS_PER_FRAME = 16;
-
 void gameenv_Destroy(struct GameEnv *ge) {
     SDL_DestroyRenderer(ge->renderer);
     ge->renderer = NULL;
@@ -55,6 +53,9 @@ bool gameenv_Init(struct GameEnv *ge) {
 }
 
 void gameenv_Run(struct GameEnv *ge) {
+
+    const int MS_PER_FRAME = ge->msPerFrame;
+
     Uint32 prev = SDL_GetTicks();
     double lag = 0.0;
     bool running = true;
@@ -71,6 +72,10 @@ void gameenv_Run(struct GameEnv *ge) {
             switch (e.type) {
             case SDL_QUIT:
                 running = false;
+                break;
+            default:
+                break;
+                // input
             }
         }
 

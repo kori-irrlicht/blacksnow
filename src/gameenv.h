@@ -12,18 +12,12 @@
 #include <stdbool.h>
 
 /**
- * MS_PER_FRAME is the max time, a frame should take for updating.
- *
- * TODO: Read from config file
- */
-extern const int MS_PER_FRAME;
-
-/**
  * GameEnv contains the environement of the game, like the main window.
  */
 struct GameEnv {
     SDL_Window *window;
     SDL_Renderer *renderer;
+    int msPerFrame;
 };
 
 /**
