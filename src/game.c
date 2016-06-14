@@ -13,6 +13,15 @@ struct Game {
     bool keyStatus[282];
 };
 
+struct Game *game_New(){
+    struct Game *g = calloc(1, sizeof(struct Game));
+    return g;
+}
+
+void game_Destroy(struct Game *g){
+    free(g);
+}
+
 void game_Input(struct Game *g, SDL_Event * event) {
     switch (event->type) {
     case SDL_KEYUP:

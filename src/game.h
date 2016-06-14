@@ -38,4 +38,20 @@ void game_Input(struct Game *g, SDL_Event * event);
  */
 void game_Update(struct Game *g);
 
+/**
+ * game_New serves as the constructor of Game.
+ * It it the preferred way to create a Game.
+ * Be sure to call game_Destroy to destroy the struct.
+ *
+ * @return Pointer to a struct Game
+ */
+struct Game *game_New();
+
+/**
+ * game_Destroy destroys a Game and frees the memory.
+ *
+ * @param g The game, which should be destroyed
+ */
+void game_Destroy(struct Game *g);
+
 #endif                          /* SRC_GAME_H_ */
