@@ -13,10 +13,7 @@
 /**
  * Game contains the current stage.
  */
-struct Game {
-    char *currentStage;
-    char *nextStage;
-};
+struct Game;
 
 /**
  * game_SwitchStage requests a stage switch.
