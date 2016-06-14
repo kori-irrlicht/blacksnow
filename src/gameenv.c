@@ -81,11 +81,9 @@ void gameenv_Run(struct GameEnv *ge) {
 
         while (lag >= MS_PER_FRAME) {
             //update
-            puts("Update");
             lag -= MS_PER_FRAME;
         }
 
         //render
-        puts("Render");
     }
 }
