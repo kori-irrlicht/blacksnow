@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
+#include "gameobject/gameobject.h"
 #include "game.h"
 
 struct Game {
