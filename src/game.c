@@ -13,23 +13,23 @@ struct Game {
     bool keyStatus[282];
 };
 
-struct Game *game_New(){
+struct Game *game_New() {
     struct Game *g = calloc(1, sizeof(struct Game));
     return g;
 }
 
-void game_Destroy(struct Game *g){
+void game_Destroy(struct Game *g) {
     free(g);
 }
 
-void game_Input(struct Game *g, SDL_Event * event) {
-    switch (event->type) {
+void game_Input(struct Game *g, SDL_Event event) {
+    switch (event.type) {
     case SDL_KEYUP:
-        g->keyStatus[event->key.keysym.scancode] = false;
+        g->keyStatus[event.key.keysym.scancode] = false;
         break;
 
     case SDL_KEYDOWN:
-        g->keyStatus[event->key.keysym.scancode] = true;
+        g->keyStatus[event.key.keysym.scancode] = true;
         break;
 
     default:

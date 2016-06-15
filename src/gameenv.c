@@ -8,6 +8,9 @@
 #include "gameenv.h"
 
 void gameenv_Destroy(struct GameEnv *ge) {
+    game_Destroy(ge->game);
+    ge->game = NULL;
+
     SDL_DestroyRenderer(ge->renderer);
     ge->renderer = NULL;
 
@@ -37,6 +40,8 @@ bool gameenv_Init(struct GameEnv *ge) {
                SDL_GetError());
         goto err_render;
     }
+
+    ge->game = game_New();
 
     return true;
 
@@ -74,6 +79,7 @@ void gameenv_Run(struct GameEnv *ge) {
                 running = false;
                 break;
             default:
+                game_Input(ge->game, e);
                 break;
                 // input
             }

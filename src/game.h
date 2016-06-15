@@ -27,7 +27,7 @@ void game_SwitchStage(struct Game *g, char *nextStage);
  * @param g The Game, which should handle the input
  * @param event A pointer to the Event, which should be handled
  */
-void game_Input(struct Game *g, SDL_Event * event);
+void game_Input(struct Game *g, SDL_Event event);
 
 /**
  * game_Update updates the game.

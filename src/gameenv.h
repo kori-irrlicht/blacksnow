@@ -11,6 +11,8 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 
+#include "game.h"
+
 /**
  * GameEnv contains the environement of the game, like the main window.
  */
@@ -18,6 +20,7 @@ struct GameEnv {
     SDL_Window *window;
     SDL_Renderer *renderer;
     int msPerFrame;
+    struct Game *game;
 };
 
 /**
