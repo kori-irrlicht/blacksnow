@@ -36,3 +36,7 @@ void game_Input(struct Game *g, SDL_Event event) {
         break;
     }
 }
+
+void game_Update(struct Game *g){
+    
+}
