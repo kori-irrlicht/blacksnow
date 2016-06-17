@@ -16,15 +16,17 @@ enum GameObjectType {
     GAMEOBJECT_TYPE_PLAYER = 1 << 0,
     GAMEOBJECT_TYPE_BODY = 1 << 2,
     GAMEOBJECT_TYPE_MOVER = 1 << 3,
+    GAMEOBJECT_TYPE_RENDERABLE = 1 << 4,
 };
 
 struct GameObject {
     enum GameObjectType type;
     union {
         struct Player {
-            struct Position pos;
             struct Velocity vel;
             struct Acceleration acc;
+            SDL_Rect rect;
+            struct SDL_Texture *texture;
         } player;
         struct Body {
             SDL_Rect rect;
@@ -33,6 +35,10 @@ struct GameObject {
             struct Velocity vel;
             struct Acceleration acc;
         } mover;
+        struct Renderable {
+            SDL_Rect rect;
+            struct SDL_Texture *texture;
+        } renderable;
     };
 };
 
