@@ -17,7 +17,7 @@ AC_PROG_CC
             :,
             AC_MSG_ERROR([*** SDL version $SDL_VERSION not found!])
   )
-  CFLAGS="$CFLAGS $SDL_CFLAGS -std=c11 -fms-extensions"
+  CFLAGS="$CFLAGS $SDL_CFLAGS -std=c11"
   LIBS="$LIBS $SDL_LIBS"
 
 AC_MSG_CHECKING(whether compiler understands -Wall)
