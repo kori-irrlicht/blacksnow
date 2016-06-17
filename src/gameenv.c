@@ -5,6 +5,7 @@
  *      Author: kori
  */
 
+#include "gameobject/gameobject.h"
 #include "gameenv.h"
 
 void gameenv_Destroy(struct GameEnv *ge) {
