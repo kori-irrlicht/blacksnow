@@ -1,4 +1,4 @@
-SUBDIRS= po src
+SUBDIRS= po assets src
 
 ACLOCAL_AMFLAGS = -I m4
 

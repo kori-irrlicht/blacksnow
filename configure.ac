@@ -28,6 +28,6 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[])],
     AC_MSG_RESULT(no)
       CFLAGS="$old_CFLAGS")
 
-AC_CONFIG_FILES(Makefile src/Makefile po/Makefile.in)
+AC_CONFIG_FILES(Makefile assets/Makefile src/Makefile po/Makefile.in)
 AC_OUTPUT
 
