@@ -10,23 +10,7 @@
 
 #include <SDL2/SDL.h>
 
-enum AssetType {
-    ASSET_TEXTURE,
-};
-
-struct Asset {
-    enum AssetType type;
-    union {
-        SDL_Texture *texture;
-    };
-    char *path;
-};
-
-struct AssetTree {
-    struct Asset content;
-    struct AssetTree *leftChild;
-    struct AssetTree *rightChild;
-};
+typedef struct AssetTree AssetTree;
 
 /**
  * Returns a texture. If the texture is not cached, the texture
@@ -37,6 +21,6 @@ struct AssetTree {
  *
  * @returns NULL if there is an error, otherwise a pointer to the texture
  */
-SDL_Texture *assets_GetTexture(struct AssetTree *at, char *path);
+SDL_Texture *assets_GetTexture(AssetTree *at, char *path);
 
 #endif                          /* SRC_TEXTURE_H_ */
